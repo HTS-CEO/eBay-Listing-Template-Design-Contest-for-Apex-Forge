@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Forge - Premium 3D Printed Automotive Parts</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Carbon Fiber Header */
+        .header-container {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9ImNhcmJvbiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIj4KICAgICAgPHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMDAwIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMCwwIEwgMTAsMTAgTSAxMCwwIEwgMCwxMCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNjYXJib24pIi8+Cjwvc3ZnPg==');
+            background-color: #000;
+            padding: 30px 0;
+            border-bottom: 3px solid #e30613;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        
+        .logo-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-text {
+            color: white;
+            font-size: 42px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .logo-tagline {
+            color: #e30613;
+            font-size: 20px;
+            margin-top: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        /* Left Column */
+        .left-column {
+            flex: 1;
+            min-width: 300px;
+            padding: 15px;
+        }
+        
+        /* Right Column */
+        .right-column {
+            flex: 1;
+            min-width: 300px;
+            padding: 15px;
+        }
+        
+        /* Product Title */
+        .product-title {
+            color: #e30613;
+            font-size: 32px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .product-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #e30613;
+        }
+        
+        /* Photo Gallery */
+        .photo-gallery {
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            transition: all 0.5s ease;
+        }
+        
+        .main-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .thumbnail-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .thumbnail {
+            width: calc(33.333% - 6px);
+            cursor: pointer;
+            border: 2px solid #ddd;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+        
+        .thumbnail:hover {
+            border-color: #e30613;
+            transform: scale(1.1);
+        }
+        
+        /* Description Section */
+        .description {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid #ddd;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            position: relative;
+        }
+        
+        .description:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: #e30613;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .description h2 {
+            color: #e30613;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .description p {
+            margin-bottom: 15px;
+        }
+        
+        .highlight {
+            background: #fff8e6;
+            padding: 15px;
+            border-left: 3px solid #e30613;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        /* Info Tables */
+        .info-table {
+            width: 100%;
+            margin-bottom: 25px;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .info-table caption {
+            text-align: left;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background: #e30613;
+            padding: 12px 20px;
+            position: relative;
+        }
+        
+        .info-table caption:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: white;
+        }
+        
+        .info-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .info-table td {
+            padding: 15px 20px;
+            border: 1px solid #eee;
+        }
+        
+        .info-table td:first-child {
+            font-weight: bold;
+            width: 30%;
+            color: #333;
+        }
+        
+        .feature-icon {
+            color: #e30613;
+            margin-right: 8px;
+        }
+        
+        /* Made in USA Banner */
+        .usa-banner {
+            background: linear-gradient(135deg, #e30613 0%, #b30000 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 25px;
+            font-weight: bold;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(227,6,19,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .usa-banner:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(45deg);
+        }
+        
+        .usa-banner:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        /* Quality Badge */
+        .quality-badge {
+            background: white;
+            border: 2px solid #e30613;
+            color: #e30613;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            margin: 15px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .quality-badge i {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .left-column, .right-column {
+                width: 100%;
+                padding: 10px;
+            }
+            
+            .thumbnail {
+                width: calc(25% - 6px);
+            }
+            
+            .logo-text {
+                font-size: 32px;
+            }
+            
+            .logo-tagline {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .thumbnail {
+                width: calc(33.333% - 6px);
+            }
+            
+            .product-title {
+                font-size: 26px;
+            }
+            
+            .info-table td {
+                padding: 10px 12px;
+                font-size: 14px;
+            }
+            
+            .usa-banner {
+                font-size: 16px;
+                padding: 15px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .animated {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Hover Effects */
+        .hover-effect {
+            transition: all 0.4s ease;
+        }
+        
+        .hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        /* Custom Bullet Points */
+        .custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .custom-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+        }
+        
+        .custom-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #e30613;
+            font-weight: bold;
+        }
+        
+        /* Rating Stars */
+        .rating {
+            display: inline-flex;
+            margin: 10px 0;
+        }
+        
+        .star {
+            color: #ffc107;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Carbon Fiber Header with Logo -->
+    <div class="header-container">
+        <div class="header-overlay"></div>
+        <div class="logo-container">
+            <div class="logo-text">APEX FORGE</div>
+            <div class="logo-tagline">Premium 3D Printed Automotive Parts</div>
+        </div>
+    </div>
+    
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <!-- Product Title -->
+            <h1 class="product-title animated">Performance Air Intake System</h1>
+            
+            <!-- Quality Badge -->
+            <div class="quality-badge animated delay-1">
+                ★★★★★ 5.0 Rated | 250+ Sold
+            </div>
+            
+            <!-- Photo Gallery -->
+            <div class="photo-gallery animated delay-1 hover-effect">
+                <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&h=600&q=80" alt="Performance Air Intake System" class="main-image">
+                <div class="thumbnail-container">
+                    <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 1" class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 2" class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 3" class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1593941707882-a5bba53b0998?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 4" class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 5" class="thumbnail">
+                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 6" class="thumbnail">
+                </div>
+            </div>
+            
+            <!-- Description -->
+            <div class="description animated delay-2 hover-effect">
+                <h2>PRODUCT DESCRIPTION</h2>
+                <p>Introducing our premium 3D Printed Performance Air Intake System, designed and manufactured in the USA with aerospace-grade materials. This innovative intake system is engineered to deliver maximum airflow while maintaining optimal filtration for your high-performance vehicle.</p>
+                
+                <div class="highlight">
+                    <strong>Why Choose Apex Forge?</strong> Our 3D printed components offer superior fitment, reduced weight, and increased durability compared to traditional manufactured parts.
+                </div>
+                
+                <p>Precision-engineered using advanced CAD software and manufactured with industrial-grade 3D printers, this air intake system provides:</p>
+                
+                <ul class="custom-list">
+                    <li>Increased horsepower and torque</li>
+                    <li>Improved throttle response</li>
+                    <li>Reduced intake air temperatures</li>
+                    <li>Aggressive engine sound</li>
+                    <li>Easy bolt-on installation</li>
+                </ul>
+                
+                <p>The system includes all necessary mounting hardware and detailed instructions for a straightforward installation process. Each component undergoes rigorous quality control testing before shipment.</p>
+            </div>
+        </div>
+        
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- What's Included -->
+            <table class="info-table animated delay-1 hover-effect">
+                <caption>What's Included</caption>
+                <tr>
+                    <td>Main Intake Assembly</td>
+                    <td>1x 3D Printed Air Intake System</td>
+                </tr>
+                <tr>
+                    <td>Filter</td>
+                    <td>High-flow reusable air filter</td>
+                </tr>
+                <tr>
+                    <td>Hardware Kit</td>
+                    <td>All necessary mounting brackets and fasteners</td>
+                </tr>
+                <tr>
+                    <td>Instructions</td>
+                    <td>Detailed full-color installation manual</td>
+                </tr>
+                <tr>
+                    <td>Warranty</td>
+                    <td>2-year manufacturer warranty</td>
+                </tr>
+            </table>
+            
+            <!-- Specifications -->
+            <table class="info-table animated delay-2 hover-effect">
+                <caption>Technical Specifications</caption>
+                <tr>
+                    <td>Material</td>
+                    <td>Carbon Fiber Reinforced Nylon (CFRN)</td>
+                </tr>
+                <tr>
+                    <td>Dimensions</td>
+                    <td>24" x 8" x 6"</td>
+                </tr>
+                <tr>
+                    <td>Weight</td>
+                    <td>3.2 lbs (1.45 kg)</td>
+                </tr>
+                <tr>
+                    <td>Color Options</td>
+                    <td>Black, Red, Blue, or Custom</td>
+                </tr>
+                <tr>
+                    <td>Compatibility</td>
+                    <td>2015-2023 Ford Mustang GT</td>
+                </tr>
+                <tr>
+                    <td>Max Temperature</td>
+                    <td>220°F (104°C)</td>
+                </tr>
+            </table>
+            
+            <!-- Features -->
+            <table class="info-table animated delay-3 hover-effect">
+                <caption>Key Features</caption>
+                <tr>
+                    <td>Performance</td>
+                    <td>+12-15 HP gain (dyno proven)</td>
+                </tr>
+                <tr>
+                    <td>Design</td>
+                    <td>Optimized airflow path for maximum efficiency</td>
+                </tr>
+                <tr>
+                    <td>Construction</td>
+                    <td>3D printed for perfect fitment and reduced weight</td>
+                </tr>
+                <tr>
+                    <td>Durability</td>
+                    <td>Heat and impact resistant materials</td>
+                </tr>
+                <tr>
+                    <td>Installation</td>
+                    <td>Direct bolt-on, no modifications required</td>
+                </tr>
+                <tr>
+                    <td>Maintenance</td>
+                    <td>Washable reusable air filter</td>
+                </tr>
+            </table>
+            
+            <!-- Customer Reviews -->
+            <div class="description animated delay-4 hover-effect">
+                <h2>CUSTOMER REVIEWS</h2>
+                <div class="rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span>(48 reviews)</span>
+                </div>
+                <p><em>"The quality is outstanding! Perfect fit and my Mustang sounds amazing now. Gained 14HP on the dyno!"</em> - Mike T.</p>
+                <p><em>"Best 3D printed part I've ever purchased. You can tell it's premium quality."</em> - Sarah K.</p>
+                <p><em>"Installation took less than an hour. Noticeable difference in throttle response immediately."</em> - James R.</p>
+            </div>
+            
+            <!-- Made in USA Banner -->
+            <div class="usa-banner animated delay-4 pulse">
+                <div style="font-size: 24px;">DESIGNED & MANUFACTURED IN USA</div>
+                <div style="font-size: 16px; margin-top: 5px;">Premium 3D Printed Quality | Lifetime Technical Support</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
