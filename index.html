@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apex Forge - Premium 3D Printed Automotive Parts</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -14,17 +15,19 @@
         }
         
         body {
-            background-color: #f8f8f8;
-            color: #333;
+            background-color: #0a0a0a;
+            color: #e0e0e0;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
-        /* Carbon Fiber Header */
         .header-container {
             background: 
-                linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(20,20,20,0.9) 100%),
-                url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9ImNhcmJvbiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIj4KICAgICAgPHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMDAwIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMCwwIEwgMTAsMTAgTSAxMCwwIEwgMCwxMCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNjYXJib24pIi8+Cjwvc3ZnPg==');
-            padding: 40px 0;
+                linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(20,20,20,0.9) 100%),
+                url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0 120px;
             border-bottom: 3px solid #e30613;
             text-align: center;
             position: relative;
@@ -37,63 +40,71 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(227,6,19,0.2) 0%, rgba(0,0,0,0.7) 100%);
+            background: linear-gradient(135deg, rgba(227,6,19,0.15) 0%, rgba(0,0,0,0.85) 100%);
         }
         
         .logo-container {
             position: relative;
             z-index: 2;
+            margin-bottom: 40px;
+        }
+        
+        .logo-img {
+            height: 120px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(227,6,19,0.5));
         }
         
         .logo-text {
             color: white;
-            font-size: 48px;
+            font-size: 52px;
             font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-            margin-bottom: 10px;
+            letter-spacing: 6px;
+            text-shadow: 0 0 15px rgba(227,6,19,0.7);
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
         }
         
         .logo-tagline {
             color: #e30613;
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 600;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            letter-spacing: 3px;
+            text-shadow: 0 0 8px rgba(0,0,0,0.8);
+            text-transform: uppercase;
         }
         
-        /* Main Container */
         .container {
             max-width: 1400px;
-            margin: 0 auto;
+            margin: -60px auto 0;
             padding: 30px;
             display: flex;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
         }
         
-        /* Left Column */
         .left-column {
             flex: 0 0 66.666%;
             padding: 20px;
         }
         
-        /* Right Column */
         .right-column {
             flex: 0 0 33.333%;
             padding: 20px;
         }
         
-        /* Product Title */
         .product-title {
             color: #e30613;
-            font-size: 36px;
+            font-size: 42px;
             margin-bottom: 25px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             position: relative;
             padding-bottom: 15px;
+            text-shadow: 0 0 10px rgba(227,6,19,0.3);
         }
         
         .product-title:after {
@@ -106,26 +117,26 @@
             background: linear-gradient(90deg, #e30613 0%, #000 100%);
         }
         
-        /* Photo Gallery */
         .photo-gallery {
             margin-bottom: 40px;
-            border: 1px solid #e0e0e0;
+            border: 1px solid #333;
             padding: 20px;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background: #111;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             border-radius: 8px;
             transition: all 0.4s ease;
         }
         
         .photo-gallery:hover {
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 40px rgba(227,6,19,0.2);
+            border-color: #e30613;
         }
         
         .main-image {
             width: 100%;
             height: auto;
             margin-bottom: 20px;
-            border: 1px solid #eee;
+            border: 1px solid #333;
             border-radius: 6px;
             transition: all 0.5s ease;
             cursor: zoom-in;
@@ -133,6 +144,7 @@
         
         .main-image:hover {
             transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(227,6,19,0.3);
         }
         
         .thumbnail-container {
@@ -144,7 +156,7 @@
         .thumbnail {
             width: calc(20% - 8px);
             cursor: pointer;
-            border: 2px solid #ddd;
+            border: 2px solid #333;
             transition: all 0.3s ease;
             border-radius: 4px;
         }
@@ -152,22 +164,23 @@
         .thumbnail:hover {
             border-color: #e30613;
             transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(227,6,19,0.4);
         }
         
-        /* Description Section */
         .description {
-            background: white;
+            background: #111;
             padding: 30px;
             margin-bottom: 30px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             border-radius: 8px;
             position: relative;
             transition: all 0.4s ease;
         }
         
         .description:hover {
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 40px rgba(227,6,19,0.2);
+            border-color: #e30613;
         }
         
         .description:before {
@@ -184,10 +197,10 @@
         
         .description h2 {
             color: #e30613;
-            font-size: 26px;
+            font-size: 28px;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #f0f0f0;
+            border-bottom: 2px solid #222;
             font-weight: 600;
         }
         
@@ -195,16 +208,18 @@
             margin-bottom: 20px;
             font-size: 16px;
             line-height: 1.7;
+            color: #ccc;
         }
         
         .highlight {
-            background: #fff8f8;
+            background: rgba(227,6,19,0.1);
             padding: 20px;
             border-left: 4px solid #e30613;
             margin: 20px 0;
             font-style: italic;
             border-radius: 0 4px 4px 0;
             position: relative;
+            color: #eee;
         }
         
         .highlight:before {
@@ -218,20 +233,21 @@
             line-height: 1;
         }
         
-        /* Info Tables */
         .info-table {
             width: 100%;
             margin-bottom: 30px;
             border-collapse: collapse;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            background: #111;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.4s ease;
+            border: 1px solid #333;
         }
         
         .info-table:hover {
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            box-shadow: 0 15px 40px rgba(227,6,19,0.2);
+            border-color: #e30613;
         }
         
         .info-table caption {
@@ -255,19 +271,20 @@
         }
         
         .info-table tr:nth-child(even) {
-            background-color: #fafafa;
+            background-color: #0a0a0a;
         }
         
         .info-table td {
             padding: 18px 25px;
-            border: 1px solid #eee;
+            border: 1px solid #222;
             font-size: 15px;
+            color: #ddd;
         }
         
         .info-table td:first-child {
             font-weight: 600;
             width: 35%;
-            color: #333;
+            color: #e30613;
         }
         
         .feature-icon {
@@ -276,7 +293,6 @@
             font-size: 18px;
         }
         
-        /* Made in USA Banner */
         .usa-banner {
             background: linear-gradient(135deg, #e30613 0%, #b30000 100%);
             color: white;
@@ -288,15 +304,16 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(227,6,19,0.3);
+            box-shadow: 0 10px 30px rgba(227,6,19,0.5);
             position: relative;
             overflow: hidden;
             transition: all 0.4s ease;
+            border: 1px solid #e30613;
         }
         
         .usa-banner:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(227,6,19,0.4);
+            box-shadow: 0 15px 40px rgba(227,6,19,0.7);
         }
         
         .usa-banner:before {
@@ -321,9 +338,8 @@
             border-radius: 50%;
         }
         
-        /* Quality Badge */
         .quality-badge {
-            background: white;
+            background: rgba(227,6,19,0.1);
             border: 2px solid #e30613;
             color: #e30613;
             font-weight: 700;
@@ -332,7 +348,7 @@
             display: inline-flex;
             align-items: center;
             margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             transition: all 0.4s ease;
         }
         
@@ -340,6 +356,7 @@
             background: #e30613;
             color: white;
             transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(227,6,19,0.5);
         }
         
         .quality-badge i {
@@ -347,7 +364,6 @@
             font-size: 20px;
         }
         
-        /* Dynamic Rating */
         .dynamic-rating {
             display: inline-block;
             position: relative;
@@ -355,7 +371,7 @@
         }
         
         .rating-stars {
-            color: #ddd;
+            color: #444;
             position: relative;
             display: inline-block;
         }
@@ -375,7 +391,6 @@
             color: #777;
         }
         
-        /* Responsive Adjustments */
         @media (max-width: 1200px) {
             .left-column, .right-column {
                 flex: 0 0 100%;
@@ -386,11 +401,15 @@
             }
             
             .logo-text {
-                font-size: 36px;
+                font-size: 42px;
             }
             
             .logo-tagline {
-                font-size: 18px;
+                font-size: 20px;
+            }
+            
+            .product-title {
+                font-size: 36px;
             }
         }
         
@@ -420,6 +439,19 @@
             .description, .photo-gallery {
                 padding: 20px;
             }
+            
+            .logo-text {
+                font-size: 32px;
+                letter-spacing: 3px;
+            }
+            
+            .logo-tagline {
+                font-size: 18px;
+            }
+            
+            .logo-img {
+                height: 80px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -448,10 +480,14 @@
             
             .logo-tagline {
                 font-size: 16px;
+                letter-spacing: 1px;
+            }
+            
+            .header-container {
+                padding: 60px 0 100px;
             }
         }
         
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -461,6 +497,11 @@
             0% { transform: scale(1); }
             50% { transform: scale(1.03); }
             100% { transform: scale(1); }
+        }
+        
+        @keyframes carbonFiber {
+            0% { background-position: 0 0; }
+            100% { background-position: 60px 60px; }
         }
         
         .animated {
@@ -477,7 +518,6 @@
             animation: pulse 2s infinite;
         }
         
-        /* Custom Bullet Points */
         .custom-list {
             list-style: none;
             padding-left: 0;
@@ -489,6 +529,7 @@
             padding-left: 30px;
             margin-bottom: 12px;
             font-size: 16px;
+            color: #ccc;
         }
         
         .custom-list li:before {
@@ -501,11 +542,10 @@
             font-size: 18px;
         }
         
-        /* Customer Reviews */
         .review {
             margin-bottom: 20px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #333;
         }
         
         .review:last-child {
@@ -518,7 +558,6 @@
             margin-top: 5px;
         }
         
-        /* Floating CTA */
         .floating-cta {
             position: fixed;
             bottom: 30px;
@@ -528,43 +567,149 @@
             padding: 15px 25px;
             border-radius: 50px;
             font-weight: 700;
-            box-shadow: 0 10px 30px rgba(227,6,19,0.4);
+            box-shadow: 0 10px 30px rgba(227,6,19,0.6);
             z-index: 100;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
+            border: 2px solid rgba(255,255,255,0.2);
         }
         
         .floating-cta:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(227,6,19,0.5);
+            box-shadow: 0 15px 40px rgba(227,6,19,0.8);
+            background: #c00511;
         }
         
         .floating-cta i {
             margin-right: 10px;
             font-size: 20px;
         }
+        
+        .performance-meter {
+            background: #111;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+        }
+        
+        .performance-meter:hover {
+            box-shadow: 0 15px 40px rgba(227,6,19,0.2);
+            border-color: #e30613;
+        }
+        
+        .meter-title {
+            color: #e30613;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .meter-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .meter-label {
+            font-weight: 600;
+            color: #e30613;
+            width: 30%;
+        }
+        
+        .meter-bar-container {
+            width: 65%;
+            background: #222;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .meter-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #e30613 0%, #ff5e62 100%);
+            border-radius: 10px;
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+        
+        .meter-value {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            line-height: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid #333;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .compatibility-badge {
+            display: inline-block;
+            background: rgba(227,6,19,0.1);
+            border: 1px solid #e30613;
+            color: #e30613;
+            padding: 8px 15px;
+            border-radius: 4px;
+            margin: 5px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .compatibility-badge:hover {
+            background: #e30613;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .carbon-fiber-bg {
+            background: 
+                linear-gradient(135deg, rgba(0,0,0,0.9) 0%, rgba(20,20,20,0.9) 100%),
+                url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9ImNhcmJvbiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIj4KICAgICAgPHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMDAwIi8+CiAgICAgIDxwYXRoIGQ9Ik0gMCwwIEwgMTAsMTAgTSAxMCwwIEwgMCwxMCIgc3Ryb2tlPSIjMjIyIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNjYXJib24pIi8+Cjwvc3ZnPg==');
+            animation: carbonFiber 2s linear infinite;
+            background-size: 60px 60px;
+        }
     </style>
 </head>
 <body>
-    <!-- Carbon Fiber Header with Logo -->
-    <div class="header-container">
+    <div class="header-container carbon-fiber-bg">
         <div class="header-overlay"></div>
         <div class="logo-container">
+            <img src="https://www.freelancer.com/fs/download-api.php?type=contest&id=2592149&filename=Apex%20Forge%20FINAL%20PNG.png" alt="Apex Forge Logo" class="logo-img">
             <div class="logo-text">APEX FORGE</div>
-            <div class="logo-tagline">PREMIUM 3D PRINTED AUTOMOTIVE COMPONENTS</div>
+            <div class="logo-tagline">ENGINEERED FOR EXTREME PERFORMANCE</div>
         </div>
     </div>
     
-    <!-- Main Content Container -->
     <div class="container">
-        <!-- Left Column -->
         <div class="left-column">
-            <!-- Product Title -->
             <h1 class="product-title animated">Performance Air Intake System</h1>
             
-            <!-- Quality Badge with Dynamic Rating -->
             <div class="quality-badge animated delay-1 hover-effect">
                 <i class="fas fa-star"></i>
                 <span class="dynamic-rating">
@@ -574,7 +719,10 @@
                 <span class="rating-count">(48 reviews)</span> | <i class="fas fa-bolt"></i> 250+ Sold
             </div>
             
-            <!-- Photo Gallery -->
+            <div class="video-container animated delay-1">
+                <iframe src="https://youtu.be/88xZ9fhpyvI" allowfullscreen></iframe>
+            </div>
+            
             <div class="photo-gallery animated delay-1 hover-effect">
                 <img src="https://images.unsplash.com/photo-1597262920492-5e0f37a202a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=800&q=80" alt="Performance Air Intake System" class="main-image">
                 <div class="thumbnail-container">
@@ -583,13 +731,41 @@
                     <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 3" class="thumbnail">
                     <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 4" class="thumbnail">
                     <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 5" class="thumbnail">
-                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 6" class="thumbnail">
-                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 7" class="thumbnail">
-                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" alt="Thumbnail 8" class="thumbnail">
                 </div>
             </div>
             
-            <!-- Description -->
+            <div class="performance-meter animated delay-2 hover-effect">
+                <div class="meter-title">PERFORMANCE METRICS</div>
+                <div class="meter-container">
+                    <div class="meter-label">Horsepower Gain</div>
+                    <div class="meter-bar-container">
+                        <div class="meter-bar" style="width: 90%;"></div>
+                        <div class="meter-value">+15HP</div>
+                    </div>
+                </div>
+                <div class="meter-container">
+                    <div class="meter-label">Torque Increase</div>
+                    <div class="meter-bar-container">
+                        <div class="meter-bar" style="width: 85%;"></div>
+                        <div class="meter-value">+12lb-ft</div>
+                    </div>
+                </div>
+                <div class="meter-container">
+                    <div class="meter-label">Weight Reduction</div>
+                    <div class="meter-bar-container">
+                        <div class="meter-bar" style="width: 75%;"></div>
+                        <div class="meter-value">-3.2lbs</div>
+                    </div>
+                </div>
+                <div class="meter-container">
+                    <div class="meter-label">Airflow Increase</div>
+                    <div class="meter-bar-container">
+                        <div class="meter-bar" style="width: 95%;"></div>
+                        <div class="meter-value">+32%</div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="description animated delay-2 hover-effect">
                 <h2>PRODUCT DESCRIPTION</h2>
                 <p>Introducing our premium 3D Printed Performance Air Intake System, designed and manufactured in the USA with aerospace-grade materials. This innovative intake system is engineered to deliver maximum airflow while maintaining optimal filtration for your high-performance vehicle.</p>
@@ -608,6 +784,8 @@
                     <li>Easy bolt-on installation with included hardware</li>
                     <li>CNC-machined mounting points for perfect alignment</li>
                     <li>Heat-resistant construction for consistent performance</li>
+                    <li>Direct replacement for factory air box with no modifications required</li>
+                    <li>Designed for street and track use</li>
                 </ul>
                 
                 <p>The system includes all necessary mounting hardware and detailed instructions for a straightforward installation process. Each component undergoes rigorous quality control testing before shipment, including 3D scans to verify dimensional accuracy.</p>
@@ -615,7 +793,23 @@
                 <p>Available in multiple finishes: Matte Black, Gloss Red, or custom color-matched to your vehicle (additional lead time required for custom colors).</p>
             </div>
             
-            <!-- Installation Gallery -->
+            <div class="description animated delay-3 hover-effect">
+                <h2><i class="fas fa-cogs feature-icon"></i> TECHNICAL DETAILS</h2>
+                <p>Our 3D printed intake system utilizes advanced additive manufacturing techniques to create complex internal geometries that would be impossible with traditional manufacturing methods. The main intake body is printed from carbon fiber reinforced nylon (CFRN) for exceptional strength-to-weight ratio.</p>
+                
+                <p>The system features:</p>
+                <ul class="custom-list">
+                    <li>Optimized airflow path with computational fluid dynamics (CFD) analysis</li>
+                    <li>Integrated velocity stack for smooth airflow transition</li>
+                    <li>Heat shield to isolate from engine bay temperatures</li>
+                    <li>High-flow oiled cotton gauze filter (washable/reusable)</li>
+                    <li>All stainless steel mounting hardware included</li>
+                    <li>Pre-installed mounting grommets for vibration isolation</li>
+                </ul>
+                
+                <p>Each intake is printed with a 0.1mm layer resolution for smooth internal surfaces that minimize turbulence and maximize airflow efficiency. The carbon fiber reinforcement provides dimensional stability under extreme temperatures while remaining 45% lighter than comparable aluminum systems.</p>
+            </div>
+            
             <div class="photo-gallery animated delay-3 hover-effect">
                 <h2 style="color: #e30613; margin-bottom: 20px; font-size: 22px;">INSTALLATION GALLERY</h2>
                 <div class="thumbnail-container">
@@ -626,11 +820,25 @@
                     <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&h=150&q=80" alt="Installation 5" class="thumbnail">
                 </div>
             </div>
+            
+            <div class="description animated delay-4 hover-effect">
+                <h2><i class="fas fa-trophy feature-icon"></i> RACE-PROVEN PERFORMANCE</h2>
+                <p>Our intake system has been tested and proven on the track by professional racing teams. The design has been optimized through extensive dyno testing and real-world racing conditions to deliver consistent performance gains.</p>
+                
+                <p>Key racing benefits:</p>
+                <ul class="custom-list">
+                    <li>Maintains power in high ambient temperatures</li>
+                    <li>No heat soak issues during extended track sessions</li>
+                    <li>Consistent airflow at all RPM ranges</li>
+                    <li>No ECU tuning required for most applications</li>
+                    <li>Meets most racing series regulations</li>
+                </ul>
+                
+                <p>The system has been track tested in conditions exceeding 100°F ambient temperatures with no loss of performance. The heat-resistant materials maintain their structural integrity even after prolonged exposure to extreme engine bay temperatures.</p>
+            </div>
         </div>
         
-        <!-- Right Column -->
         <div class="right-column">
-            <!-- What's Included -->
             <table class="info-table animated delay-1 hover-effect">
                 <caption><i class="fas fa-box-open feature-icon"></i> What's Included</caption>
                 <tr>
@@ -657,9 +865,12 @@
                     <td>Support</td>
                     <td>Lifetime technical support</td>
                 </tr>
+                <tr>
+                    <td>Bonus</td>
+                    <td>Apex Forge decal pack</td>
+                </tr>
             </table>
             
-            <!-- Specifications -->
             <table class="info-table animated delay-2 hover-effect">
                 <caption><i class="fas fa-cogs feature-icon"></i> Technical Specifications</caption>
                 <tr>
@@ -690,9 +901,16 @@
                     <td>HP Gain</td>
                     <td>12-15 HP (dyno proven)</td>
                 </tr>
+                <tr>
+                    <td>Torque Gain</td>
+                    <td>10-12 lb-ft (dyno proven)</td>
+                </tr>
+                <tr>
+                    <td>Filter Life</td>
+                    <td>50,000 miles (with proper maintenance)</td>
+                </tr>
             </table>
             
-            <!-- Features -->
             <table class="info-table animated delay-3 hover-effect">
                 <caption><i class="fas fa-bolt feature-icon"></i> Key Features</caption>
                 <tr>
@@ -719,9 +937,31 @@
                     <td>Maintenance</td>
                     <td>Washable reusable air filter</td>
                 </tr>
+                <tr>
+                    <td>Technology</td>
+                    <td>Computational fluid dynamics optimized</td>
+                </tr>
+                <tr>
+                    <td>Testing</td>
+                    <td>Dyno-proven performance gains</td>
+                </tr>
             </table>
             
-            <!-- Customer Reviews -->
+            <div class="description animated delay-4 hover-effect">
+                <h2><i class="fas fa-car feature-icon"></i> COMPATIBLE MODELS</h2>
+                <div>
+                    <span class="compatibility-badge">2015 Mustang GT</span>
+                    <span class="compatibility-badge">2016 Mustang GT</span>
+                    <span class="compatibility-badge">2017 Mustang GT</span>
+                    <span class="compatibility-badge">2018 Mustang GT</span>
+                    <span class="compatibility-badge">2019 Mustang GT</span>
+                    <span class="compatibility-badge">2020 Mustang GT</span>
+                    <span class="compatibility-badge">2021 Mustang GT</span>
+                    <span class="compatibility-badge">2022 Mustang GT</span>
+                    <span class="compatibility-badge">2023 Mustang GT</span>
+                </div>
+            </div>
+            
             <div class="description animated delay-4 hover-effect">
                 <h2><i class="fas fa-comments feature-icon"></i> CUSTOMER REVIEWS</h2>
                 <div class="dynamic-rating" style="margin-bottom: 20px;">
@@ -744,24 +984,53 @@
                     <p><em>"Installation took less than an hour. Noticeable difference in throttle response immediately. The intake sound is aggressive but not obnoxious. Very happy with my purchase and would buy from Apex Forge again."</em></p>
                     <div class="review-author">- James R. (Verified Owner)</div>
                 </div>
+                
+                <div class="review">
+                    <p><em>"The performance gains are real. My car pulls harder through the entire RPM range. The quality is better than big name brands at half the price. Highly recommend!"</em></p>
+                    <div class="review-author">- David M. (Verified Owner)</div>
+                </div>
             </div>
             
-            <!-- Made in USA Banner -->
             <div class="usa-banner animated delay-4 pulse">
                 <div style="font-size: 24px; margin-bottom: 5px;"><i class="fas fa-flag"></i> DESIGNED & MANUFACTURED IN USA</div>
                 <div style="font-size: 16px;">Aerospace-Grade Materials | Lifetime Technical Support</div>
             </div>
             
-            <!-- Limited Edition Badge -->
             <div class="quality-badge animated delay-4" style="background: #e30613; color: white; text-align: center; display: block; margin-top: 20px;">
                 <i class="fas fa-clock"></i> LIMITED EDITION - ONLY 25 REMAINING
+            </div>
+            
+            <div class="quality-badge animated delay-4" style="background: #111; border-color: #444; color: #e30613; text-align: center; display: block; margin-top: 15px;">
+                <i class="fas fa-truck"></i> FREE EXPRESS SHIPPING ON ALL ORDERS
             </div>
         </div>
     </div>
     
-    <!-- Floating CTA -->
     <div class="floating-cta animated delay-4">
         <i class="fas fa-shopping-cart"></i> ADD TO CART - $349.99
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const meterBars = document.querySelectorAll('.meter-bar');
+            meterBars.forEach(bar => {
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = bar.getAttribute('style').split(';')[0].split(':')[1];
+                }, 300);
+            });
+            
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.querySelector('.main-image');
+            
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    const tempSrc = mainImage.src;
+                    mainImage.src = this.src.replace('200&h=150', '1200&h=800');
+                    this.src = tempSrc.replace('1200&h=800', '200&h=150');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
